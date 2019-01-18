@@ -1,1 +1,1 @@
-# boilerplate-static
+# Simple Static Boilerplate
