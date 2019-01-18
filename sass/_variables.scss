@@ -4,9 +4,16 @@ $configs: (
 	sidebar: 300px
 );
 
+$neutrals: (
+	white: #FFFFFF,
+	black: #000000,
+);
+
+$grays: (
+	gray-1: #CCC
+);
+
 $colors: (
-	neutral-0: #FFFFFF,
-	neutral-1: #000000,
 	color-1: #3498db,
 );
 
@@ -23,6 +30,22 @@ $breakpoints: (
 		@return map-get($configs, $key);
 	}
 	@warn "Unknown #{$key} in configs map";
+	@return null;
+}
+
+@function neutral($key) {
+	@if map-has-key($neutrals, $key) {
+		@return map-get($neutrals, $key);
+	}
+	@warn "Unknown #{$key} in neutrals map";
+	@return null;
+}
+
+@function gray($key) {
+	@if map-has-key($grays, $key) {
+		@return map-get($grays, $key);
+	}
+	@warn "Unknown #{$key} in grays map";
 	@return null;
 }
 
